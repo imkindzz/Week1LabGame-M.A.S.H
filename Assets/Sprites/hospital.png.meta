@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b16910f6422c40e4b969fe2fec625282
+guid: 3d23ffeef67eee34e8e925772055f778
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1791730205000612208
-    second: Helicopter Sprite_0
+      213: 8802559959546800957
+    second: hospital_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Helicopter Sprite_0
+      name: hospital_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 123
-        width: 368
-        height: 147
+        x: 102
+        y: 78
+        width: 422
+        height: 468
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0793662e0218dd810800000000000000
-      internalID: 1791730205000612208
+      spriteID: d3b2dde25a9f82a70800000000000000
+      internalID: 8802559959546800957
       vertices: []
       indices: 
       edges: []
@@ -130,8 +130,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Helicopter Sprite_0: 1791730205000612208
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
