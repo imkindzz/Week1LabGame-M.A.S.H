@@ -27,14 +27,14 @@ public class HelicopterMovement : MonoBehaviour
 
         // Apply horizontal and vertical movement
         transform.Translate(new Vector3(moveHorizontal, 0, moveVertical));
-       
-        void OnTriggerEnter(Collider other)
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Tree"))
         {
-                if (other.CompareTag("Tree"))
-            {
-                GameManager.Instance.GameOver();
+            GameManager.Instance.PlayerLost(); // Call PlayerLost instead of GameOver
         }
     }
-}
 }
 
