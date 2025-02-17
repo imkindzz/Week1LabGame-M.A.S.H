@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: -5720820866022240212}
   - component: {fileID: -11854998526304564}
   - component: {fileID: 875767039763406325}
+  - component: {fileID: 5602470229946701037}
+  - component: {fileID: 4306082473785598963}
   - component: {fileID: -1986399325208160222}
   m_Layer: 0
   m_Name: Helicopter
@@ -122,6 +124,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   liftSpeed: 5
+--- !u!114 &5602470229946701037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2750534584624276399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae8bd00920c223541b7289d5c43c240b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4306082473785598963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2750534584624276399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b971cd4ed869b7449d0ee6138891e53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soldierCount: 0
+  maxSoldiers: 3
 --- !u!61 &-1986399325208160222
 BoxCollider2D:
   m_ObjectHideFlags: 0
