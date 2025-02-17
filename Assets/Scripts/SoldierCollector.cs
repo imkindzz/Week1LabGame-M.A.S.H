@@ -3,24 +3,24 @@ using TMPro; // Import TextMeshPro for UI
 
 public class SoldierCollector : MonoBehaviour
 {
-    public int soldierCount = 0; // Tracks the number of soldiers collected
-    public int maxSoldiers = 3;  // Maximum number of soldiers that can be collected
-    public TextMeshProUGUI soldierCounterText; // Reference to UI Text
+    public int soldierCount = 0;          // Tracks the number of soldiers collected
+    public int maxSoldiers = 3;           // Maximum number of soldiers that can be collected
+    public int rescuedSoldiers = 0;       // Total number of soldiers rescued
+    public TextMeshProUGUI soldierCounterText;    // UI for current soldiers
+    public TextMeshProUGUI rescuedCounterText;    // UI for rescued soldiers
 
     private void Start()
     {
-        UpdateUI(); // Update UI at the start
+        UpdateUI();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Check if the collided object has the tag "Soldier"
         if (collision.CompareTag("Soldier") && soldierCount < maxSoldiers)
         {
             CollectSoldier(collision.gameObject);
         }
 
-        // Check if the collided object has the tag "Hospital"
         if (collision.CompareTag("Hospital") && soldierCount > 0)
         {
             DropOffSoldiers();
@@ -29,32 +29,19 @@ public class SoldierCollector : MonoBehaviour
 
     private void CollectSoldier(GameObject soldier)
     {
-        // Destroy the soldier GameObject
         Destroy(soldier);
-
-        // Increase the soldier count
         soldierCount++;
-
-        // Update UI
         UpdateUI();
 
         Debug.Log("Soldier collected! Total soldiers: " + soldierCount);
-
-        // Check if the maximum number of soldiers has been collected
-        if (soldierCount >= maxSoldiers)
-        {
-            Debug.Log("Maximum soldiers collected!");
-        }
     }
 
     private void DropOffSoldiers()
     {
-        Debug.Log("Dropping off " + soldierCount + " soldiers at the hospital!");
+        rescuedSoldiers += soldierCount;  // Add current soldiers to rescued total
+        Debug.Log("Dropped off " + soldierCount + " soldiers at the hospital! Total rescued: " + rescuedSoldiers);
 
-        // Reset the soldier count
-        soldierCount = 0;
-
-        // Update UI after drop-off
+        soldierCount = 0;  // Reset current soldier count
         UpdateUI();
     }
 
@@ -64,5 +51,10 @@ public class SoldierCollector : MonoBehaviour
         {
             soldierCounterText.text = "Soldiers: " + soldierCount + "/" + maxSoldiers;
         }
+        if (rescuedCounterText != null)
+        {
+            rescuedCounterText.text = "Rescued: " + rescuedSoldiers;
+        }
     }
 }
+
