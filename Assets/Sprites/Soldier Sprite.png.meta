@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Soldier Sprite_0: 7686348529525440641
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
