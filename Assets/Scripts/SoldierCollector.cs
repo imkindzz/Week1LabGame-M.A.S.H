@@ -7,9 +7,12 @@ public class SoldierCollector : MonoBehaviour
     public int maxSoldiers = 3;
     public TextMeshProUGUI soldierCounterText;
     public TextMeshProUGUI rescuedCounterText;
+    public AudioClip pickupSound; // Assign the sound in the Inspector
+    private AudioSource audioSource;
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         UpdateUI();
     }
 
@@ -30,6 +33,11 @@ public class SoldierCollector : MonoBehaviour
     {
         Destroy(soldier);
         soldierCount++;
+        // Play pickup sound
+        if (pickupSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(pickupSound);
+        }
         UpdateUI();
     }
 
